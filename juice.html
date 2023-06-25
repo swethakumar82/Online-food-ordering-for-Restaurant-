@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juices and Icecream Menu</title>
+  <link rel="icon" type="image/x-icon" href="D:\\project\\restaurant.png">
+  <link rel="stylesheet" href="D:\\project\\style.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+</head>
+<body>
+  <header>
+  <div style="width: 100%;">
+   <div style="float:left; width: 80%">
+   </div>
+   <div style="float:right;">
+   </div>
+</div>
+<div style="clear:both"></div>
+    <div class="nav">
+      <img src="D:\\project\\dinner.png" style="float:left;width:42px;height:42px;" alt="dinner_logo"class="logo">
+         <h1>The Diner</h1>
+      
+      <div class="box">
+        <div class="cart-count">0</div>
+        <ion-icon name="cart"  id="cart-icon" ></ion-icon>
+      </div>
+
+      <div class="cart">
+        <div class="cart-title">Cart Items</div>
+        <div class="cart-content">
+        </div>
+        
+      <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price">Rs.0</div>
+      </div>
+
+      <button class="btn-buy">Place Order</button>
+
+      <ion-icon name="close" id="cart-close"></ion-icon>
+
+      </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="file:///D:/project/breakfast.html" target="_blank">Breakfast</a>
+      <a href="file:///D:/project/lunch.html" target="_blank">Lunch</a>
+      <a href="file:///D:/project/dinner.html" target="_blank">Dinner</a>
+      <a href="file:///D:/project/juice.html" target="_blank">Juices and Icecreams</a>
+      <a href="file:///D:/project/sweets%20and%20snacks.html" target="_blank">Sweets and Snacks</a>
+    </div>
+
+   <ul>
+     <li><a href="file:///D:/project/dashboard(new).html">Home</a></li>
+     <li><a  class="active" href="#menu"><span  onclick="openNav()">Menu</span></a></li>
+     <li><a href="file:///D:/project/signup.html">Sign up</a></li>
+     <li><a href="D:\\project\\login.html">Login</a></li>
+     <li style="float:right"><a href="file:///D:/project/About.html">About</a></li>
+     <li style="float:right"><a href="#contact">Contact</a></li>
+   </ul>
+  </header>
+  <div class="container">
+    <h2 class="title">Discover the Best Food</h2>
+	<h1>ICECREAMS</h1>
+    <div class="shop-content">
+      <div class="food-box">
+        <div class="pic">
+          <img src="D:\\project\\juices\\chocolate icecream.jpg"class="food-img">
+        </div>
+        <h2 class="food-title">Chocolate icecream</h2>
+        <span class="food-price">Rs.80</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+
+
+      <div class="food-box">
+        <div class="pic">
+            <img src="D:\\project\\juices\\vanilla icecream.jpg" class="food-img"></div>
+        <h2 class="food-title">Vanilla icecream</h2>
+        <span class="food-price">Rs.70</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+  
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\strawberry icecream.jpg" class="food-img"></div>
+        <h2 class="food-title">Strawberry icecream</h2>
+        <span class="food-price">Rs.80</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+
+  
+      <div class="food-box">
+        <div class="pic"><img src="D:\project\juices\blackcurrent icecream.jpg" class="food-img"></div>
+        <h2 class="food-title">Blackcurrent icecream </h2>
+        <span class="food-price">Rs.80</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+	  
+	  </div>
+	  </div>
+	  
+	    <div class="container">
+		<h1 class="title">JUICES</h1>
+     <div class="shop-content">
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\lemonade.jpg" class="food-img"></div>
+        <h2 class="food-title">Lemonade</h2>
+        <span class="food-price">Rs.90</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+  
+  
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\mango juice.jpg" class="food-img"></div>
+        <h2 class="food-title">Mango juice</h2>
+        <span class="food-price">Rs.90</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+  
+  
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\grape juice.jpg" class="food-img"></div>
+        <h2 class="food-title">Grape juice</h2>
+        <span class="food-price">Rs.90</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+ 
+
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\orange juice.jpg" class="food-img"></div>
+        <h2 class="food-title">Orange juice</h2>
+        <span class="food-price">Rs.90</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+	  
+	   <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\papaya juice.jpg" class="food-img"></div>
+        <h2 class="food-title">Papaya juice</h2>
+        <span class="food-price">Rs.90</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\pineapple juice.jpg" class="food-img"></div>
+        <h2 class="food-title">Pineapple juice  </h2>
+        <span class="food-price">Rs.90</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+
+
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\watermelon juice.jpg"class="food-img"></div>
+        <h2 class="food-title">Watermelon juice</h2>
+        <span class="food-price">Rs.90</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+
+
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\apple juice.jpg" class="food-img"></div>
+        <h2 class="food-title">Apple juice</h2>
+        <span class="food-price">Rs.90</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+	  
+	  
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\kiwi juice.jpg" class="food-img"></div>
+        <h2 class="food-title">Kiwi juice</h2>
+        <span class="food-price">Rs.90</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\pomegranate juice.jpg" class="food-img"></div>
+        <h2 class="food-title">Pomegranate juice</h2>
+        <span class="food-price">Rs.90</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+	  
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\sweet lemon.jpg" class="food-img"></div>
+        <h2 class="food-title">Sweetlemon juice</h2>
+        <span class="food-price">Rs.90</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\starwberry juice.jpg" class="food-img"></div>
+        <h2 class="food-title">Starwberry juice</h2>
+        <span class="food-price">Rs.90</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+	  
+	  </div>
+	  </div>
+	  
+	    <div class="container">
+		<h1 class="title">MILKSHAKE</h1>
+		<div class="shop-content">
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\oreo milkshake.jpg" class="food-img"></div>
+        <h2 class="food-title">Oreo Milkshake</h2>
+        <span class="food-price">Rs.120</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+	  
+	   <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\kitkat milkshake.jpg" class="food-img"></div>
+        <h2 class="food-title">Kitkat Milkshake</h2>
+        <span class="food-price">Rs.120</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+
+
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\strawberry milkshake.jpg" class="food-img"></div>
+        <h2 class="food-title">Strawberry Milkshake</h2>
+        <span class="food-price">Rs.90</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+
+
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\vennila milkshake.jpg" class="food-img"></div>
+        <h2 class="food-title">Vannila Milkshake</h2>
+        <span class="food-price">Rs.90</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+
+
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\coco milkshake.jpg" class="food-img"></div>
+        <h2 class="food-title">Chocolate Milkshake</h2>
+        <span class="food-price">Rs.90</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+
+
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\jigarthanda.jpg" class="food-img"></div>
+        <h2 class="food-title">Jigarthanda</h2>
+        <span class="food-price">Rs.65</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+
+      <div class="food-box">
+        <div class="pic"><img src="D:\\project\\juices\\black currant milkshake.jpg" class="food-img"></div>
+        <h2 class="food-title">Blackcurrant Milkshake</h2>
+        <span class="food-price">Rs.120</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+	  </div>
+	   </div>
+
+
+  </div>
+  <script src="D:\\project\\script.js.txt"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form </title>
+<link rel="icon" type="image/x-icon" href="D:\\project\\restaurant.png">
+<style>
+body {font-family: Verdana, sans-serif;}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ff8000;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color:#00BCE3;
+}
+.container {
+  text-align: center;
+  margin: 25px 0 12px 0;
+  padding:150px 40px 50px 40px;
+  background: - Irgb(50, 50, 50);
+  border-radius:10px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("D:\\project\\dinner2.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;}
+ 
+ table, th, td {
+    background-color: rgba(0,0,0,.5);
+    color: #fff;
+ 
+}
+th, td {
+  background-image: url("D:\\project\\dinner2.jpg")
+}
+ 
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #ff8000;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color:black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 15px;}
+} 
+</style>
+</head>
+<body>
+<div style="width: 100%;">
+   <div style="float:left; width: 80%">
+   </div>
+   <div style="float:right;">
+   </div>
+</div>
+<div style="clear:both"></div>
+<ul>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="file:///D:/project/breakfast.html" target="_blank">Breakfast</a>
+  <a href="file:///D:/project/lunch.html" target="_blank">Lunch</a>
+  <a href="file:///D:/project/dinner.html" target="_blank">Dinner</a>
+  <a href="file:///D:/project/juice.html" target="_blank">Juices and Icecreams</a>
+  <a href="file:///D:/project/sweets%20and%20snacks.html" target="_blank">Sweets and Snacks</a>
+</div>
+  <li><a href="file:///D:/project/dashboard(new).html">Home</a></li>
+  <li><a href="#menu"><span  onclick="openNav()">Menu</span></a></li>
+  <li><a  class="active" href="file:///D:/project/signup.html">Sign up</a></li>
+  <li><a href="file:///D:/project/login.html">Login</a></li>
+  <li style="float:right"><a href="file:///D:/project/About.html">About</a></li>
+  <li style="float:right"><a href="#contact">Contact</a></li>
+</ul>
+
+<table cellspacing="3" align="center" style="border: 1px solid white;outline-style: outset;">
+	<h1 style="padding:65px 0px 0px 0px;color:white;text-shadow: 2px 0px black;"><center>Registration Form</center></h1>
+	<form action="/signup.html" method="post">
+	<tr>
+      <td> 
+        <label for="fname" >Firstname:</label> 
+      </td> 
+	  <td>
+		<input type="text" id="fname" name="firstname" required><br>
+	  </td>
+      </tr>
+	<tr>
+      <td> 
+        <label for="Lastname">Lastname:</label> 
+      </td> 
+	  <td>
+		<input type="text" id="lname" name="lastname" required><br>
+	  </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="email">Email:</label> </td>
+        <td> <input type="email" id="email" name="email" required><br> </td>
+	  </tr>
+      <tr>
+        <td> <label for="password">Password:</label> </td>
+        <td> 
+          <input type="password" id="pswd" name="password" required><br>        </td>
+      </tr>
+      <tr>
+        <td> <label for="confirm_password">Confirm Password:</label> </td>
+        <td> <input type="password" id="pswd" name="confirm_password" required><br> </td>
+     </tr>
+ <tr> 
+   <td>
+     <label for="dob">Date of Birth:</label></td>
+     <td>  <input type="date" id="dob" name="dob" required><br>
+</td>
+      </tr>
+      <tr>
+        <td> <label for="gender">Gender:</label> </td>
+        <td>
+        <select id="gen" name="gender" required>
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+			<option value="other">Other</option>
+		</select><br>
+        </td>
+      </tr>
+      <tr> 
+        <td> <label for="address">Address:</label> </td>
+        <td> <textarea id="addr" name="address" rows="4" cols="50" required></textarea><br>  </td>
+	</tr>
+	<tr> 
+	<td>
+	 <label for="phone">Enter a phone number:</label><br><br> </td>
+	 <td>
+  <input type="tel" id="phno" name="phone" placeholder="0123456789" pattern="[1-9]{1}{9}" required>   <small>Format:1234567890</small><br><br> </td> 
+<br><br><td>
+  </tr> 
+      <tr>
+        <td  align="center"> <input type="submit" value="Submit"> </td>
+       <td  align="center"> <input type="reset" value="Reset"> </td>
+      </tr>
+	</form>
+ </body>
+</html>

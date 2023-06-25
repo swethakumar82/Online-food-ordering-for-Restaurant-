@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>AboutUs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" type="image/x-icon" href="D:\\project\\restaurant.png">
+
+<style>
+body {font-family: Verdana, sans-serif;}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ff8000;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color:  #00BCE3;
+}
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #ff8000;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color:black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 15px;}
+}
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: RGB(195, 68, 122);
+  color: white;
+}
+
+</style>
+</head>
+<body>
+<ul>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="file:///D:/project/breakfast.html" target="_blank">Breakfast</a>
+  <a href="file:///D:/project/lunch.html" target="_blank">Lunch</a>
+  <a href="file:///D:/project/dinner.html" target="_blank">Dinner</a>
+  <a href="file:///D:/project/juice.html" target="_blank">Juices and Icecreams</a>
+  <a href="file:///D:/project/sweets%20and%20snacks.html" target="_blank">Sweets and Snacks</a>
+</div>
+  <li><a href="file:///D:/project/dashboard(new).html">Home</a></li>
+  <li><a href="#menu"><span  onclick="openNav()">Menu</span></a></li>
+  <li><a href="file:///D:/project/signup.html">Sign up</a></li>
+  <li><a href="D:\\project\\login.html">Login</a></li>
+  <li style="float:right"><a class="active" href="file:///D:/project/About.html">About</a></li>
+  <li style="float:right"><a href="#contact">Contact</a></li>
+</ul>
+<div style="padding:5% 0% 0% 0%; float:center;background-color: RGB(195, 68, 122);">
+<center><img src="D:\\project\\dinner.png" height="10%" width="5%"alt="THE DINER"> </center></div>
+<dl>
+  <dt><h1><center>THE DINER</center></h1></dt>
+  <dd><h3><center>Move your feet,get a treat.</h3></center></dd>
+</dl>
+
+<div>
+<div class="about-section" style="font-weight:bold;text-align:center;;align=justify;">
+<img src="D:\\project\\dinner2.jpg" alt="Restaurant Img" height="500px" width="500px">
+  <h1>About Us</h1>
+  <p>Over the years,The Diner restaurant have earned a reputation for culinary excellence 
+  thanks to their authentic delicacies and signature dining experiences. 
+  From traditional flavours influenced by local culture to gastronomic 
+  delights that trot the world,we have always raised the standard of hospitality at afforable prices. 
+  The aim of our restaurant is to turn every meal into a special event, where thoughtfulness,
+  attention to detail, time-honoured techniques and innovative thinking come together to speak the language of food.</p>
+  
+  <h1>Our Michelin Star Chef<h1>
+  <img src="D:\\project\\Garima-Arora--866x1298.webp" alt="Chef" style="width:200px;border-radius: 50%">
+  <h3 style="float:center;">Garima Arora</h3>
+  <p>The Diner,a modern indian fine dining Restaurant by Garima Arora.she became 
+  the first Indian woman to win a Michelin star award in November 2018.
+  Her vision to SERVE BETTER is our formula for sucess.Her efforts,sincerity,
+  intention noble and the aspiration was high to gain success as natural by-product. 
+  Delicious food prepared under extremely hygienic conditions, served in 
+  a clean environment with a lot of passion and the reasonable pricing is 
+  the perfect answer to our gourmet and budget conscious customer.
+</div>
+</div>
+<div style="background-color:#ff8000;text-align:center;font-weight:bold;font-size:20px;">
+<pre>
+©2023 The DINER
+Developed by Swetha.k and Pradeepa.J
+</pre>
+</div>
+<script src="D:\\project\\dinnerImages\\script.js.txt"></script>
+</body>
+</html>

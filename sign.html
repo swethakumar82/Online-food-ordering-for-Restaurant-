@@ -1,0 +1,149 @@
+<style> 
+img {
+  background-color: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form </title>
+<link rel="icon" type="image/x-icon" href="D:\\project\\restaurant.png">
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ff8000;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color:  #00BCE3;
+}
+</style>
+</head>
+<body>
+<div style="width: 100%;">
+   <div style="float:left; width: 80%">
+   </div>
+   <div style="float:right;">
+   </div>
+</div>
+<div style="clear:both"></div>
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#menu">Menu</a></li>
+  <li><a href="#signup">Sign up</a></li>
+  <li><a href="#login">Login</a></li>
+  <li style="float:right"><a href="#about">About</a></li>
+  <li style="float:right"><a href="#contact">Contact</a></li>
+</ul>
+
+<id="img" ><img src="D:\\project\\dinner2.jpg" alt="Hotel image">
+<p style="background-image: url('D:\\project\\dinner2.jpg");">
+<table cellspacing="3" align="center" style="background-color:skyblue;">
+	<h1><center>Registration Form</center></h1>
+	<form action="#" method="post">
+	<tr>
+      <td> 
+        <label for="fname">Firstname:</label> 
+      </td> 
+	  <td>
+		<input type="text" id="fname" name="firstname" required><br>
+	  </td>
+      </tr>
+	<tr>
+      <td> 
+        <label for="Lastname">Lastname:</label> 
+      </td> 
+	  <td>
+		<input type="text" id="lname" name="lastname" required><br>
+	  </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="email">Email:</label> </td>
+        <td> <input type="email" id="email" name="email" required><br> </td>
+	  </tr>
+      <tr>
+        <td> <label for="password">Password:</label> </td>
+        <td> 
+          <input type="password" id="password" name="password" required><br>        </td>
+      </tr>
+      <tr>
+        <td> <label for="confirm_password">Confirm Password:</label> </td>
+        <td> <input type="password" id="confirm_password" name="confirm_password" required><br> </td>
+     </tr>
+ <tr> 
+   <td>
+     <label for="dob">Date of Birth:</label></td>
+     <td>  <input type="date" id="dob" name="dob" required><br>
+</td>
+      </tr>
+      <tr>
+        <td> <label for="gender">Gender:</label> </td>
+        <td>
+        <select id="gender" name="gender" required>
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+			<option value="other">Other</option>
+		</select><br>
+        </td>
+      </tr>
+      <tr> 
+        <td> <label for="address">Address:</label> </td>
+        <td> <textarea id="address" name="address" rows="4" cols="50" required></textarea><br>  </td>
+	</tr>
+	<tr> 
+	<td>
+	 <label for="phone">Enter a phone number:</label><br><br> </td>
+	 <td>
+  <input type="tel" id="phone" name="phone" placeholder="0123456789" pattern="[1-9]{1}{9}" required>
+               <small>Format:1234567890</small><br><br> </td> 
+<br><br><td>
+  </tr> 
+      <tr>
+        <td  align="center"> <input type="submit" value="Submit"> </td>
+       <td  align="center"> <input type="reset" value="Reset"> </td>
+      </tr>
+
+	
+	</form>
+</body>
+</html>

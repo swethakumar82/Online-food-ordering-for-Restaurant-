@@ -1,0 +1,481 @@
+<sectionclass="product">
+   <divclass="container
+text-center">
+       <divclass="row">
+           <divclass="col-md-3"*ngFor="letprodof
+productArray">
+               <divclass="box">
+                   <divclass="product_image">
+                       <imgsrc="{{prod.img}}"alt="P1">
+                   </div>
+                   <divclass="content">
+                       <h4>₹{{prod.amt}}</h4>
+                       <buttontype="button"class="btn"(click)="inc(prod)">
+                           <iclass="fa fa-plus"></i>
+                       </button>
+                       <span>{{prod.qnt}}</span>
+                       <buttontype="button"class="btn"(click)="dec(prod)">
+                           <iclass="fa fa-minus"></i>
+                       </button>
+                   </div>
+                   <buttontype="button"class="cart_btn"(click)="addCart(prod)">
+                        Add To Cart</button>
+               </div>
+           </div>
+       </div>
+   </div>
+</section>
+
+home.component.css
+.product{
+       padding:40px 0;
+   }
+
+   .box{
+       padding:20px;
+       border:1px solid#ccc;
+       border-radius:4px;
+   }
+
+   .contenth4{
+       margin-top:10px;
+   }
+
+   .btn{
+       background:rgb(94,0,0);
+       border-radius:50%;
+       font-size:16px;
+       color:#fff;
+       margin:0 8px;
+   }
+
+   .contentspan{
+       font-weight:800;
+       font-size:18px;
+   }
+
+   .cart_btn{
+       border-radius:4px;
+       background:rgb(94,0,0);
+       border:1px solidrgb(94,0,0);
+       color:#fff;
+       font-weight:600;
+       font-size:16px;
+       margin-top:20px;
+       padding:4px 16px;
+       text-transform:uppercase;
+       transition:0.4s;
+   }
+
+   .cart_btn:hover{
+       color:rgb(94,0,0);
+       background:transparent;
+       border:1px solidrgb(94,0,0);
+   }
+
+home.component.ts
+import { AuthService } from 
+'../_service/auth.service';
+
+constructor
+(private auth: AuthService)
+ { }
+
+productArray = [
+    {
+      prodId: 1,
+      img: "../../assets/p1.jpg",
+      amt: 400,
+      qnt: 1
+    },
+    {
+      prodId: 2,
+      img: "../../assets/p2.jpg",
+      amt: 600,
+      qnt: 1
+    },
+    {
+      prodId: 3,
+      img: "../../assets/p3.jpg",
+      amt: 800,
+      qnt: 1
+    },
+    {
+      prodId: 4,
+      img: "../../assets/p4.jpg",
+      amt: 1000,
+      qnt: 1
+    }
+  ];
+
+  inc(prod){
+    if(prod.qnt != 5){
+      prod.qnt += 1;
+    }
+  }
+
+  dec(prod){
+    if(prod.qnt != 1){
+      prod.qnt -= 1;
+    }
+  }
+
+  itemsCart:any = [];
+  addCart(category){
+    let cartDataNull = 
+  localStorage.getItem('localCart');
+    if(cartDataNull == null){
+      let storeDataGet:any = [];
+    storeDataGet.push(category);
+      localStorage.setItem
+        ('localCart', 
+     JSON.stringify(storeDataGet));
+    }
+    else{
+      var id = category.prodId;
+      let index:number = -1;
+      this.itemsCart = 
+    JSON.parse
+(localStorage.getItem
+('localCart'));
+for
+(let i=0; i<this.itemsCart.length; 
+i++){
+if(parseInt(id) === 
+parseInt(this.itemsCart[i].prodId))
+{
+        this.itemsCart[i].qnt = 
+category.qnt;
+          index = i;
+          break;
+        }
+      }
+      if(index == -1){
+this.itemsCart.push(category);
+        localStorage.setItem
+('localCart', JSON.stringify
+(this.itemsCart));
+      }
+      else{
+        localStorage.setItem
+('localCart', JSON.stringify
+(this.itemsCart));
+      }
+    }
+    this.cartNumberFunc();
+  }
+
+ cartNumber:number = 0;
+ cartNumberFunc(){
+   var cartValue = 
+JSON.parse
+(localStorage.getItem
+('localCart'));
+   this.cartNumber = 
+cartValue.length;
+   this.auth.cartSubject.next
+(this.cartNumber);
+ }
+header.component.html
+<header>
+   <divclass="container">
+       <divclass="row">
+           <divclass="col-md-6">
+               <h4routerLink="/home">Home</h4>
+           </div>
+           <divclass="col-md-6 text-right">
+               <divclass="cart_icon"routerLink="/cart">
+                   <iclass="fa fa-shopping-cart">
+                   </i>
+                   <divclass="cart_value">
+                       {{cartItem}}
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</header>
+
+header.component.css
+header{
+       background:rgb(94,0,0);
+       padding:20px 0;
+   }
+
+   headerh4{
+       color:#fff;
+       cursor:pointer;
+   }
+
+   headerh4:focus{
+       outline:none;
+       border:none;
+   }
+
+   .cart_icon{
+       position:relative;
+       cursor:pointer;
+   }
+
+   .cart_icon:focus{
+       outline:none;
+       border:none;
+   }
+
+   .cart_iconi{
+       font-size:24px;
+       color:#fff;
+   }
+
+   .cart_value{
+       position:absolute;
+       top:-16px;
+       right:-32px;
+       background:#fff;
+       border:1px solid#ccc;
+       border-radius:50%;
+       padding:4px 10px;
+       font-weight:800;
+       font-size:16px;
+   }
+header.component.ts
+import { AuthService } from 
+'../_service/auth.service';
+
+constructor(private auth: AuthService) { 
+this.auth.cartSubject.subscribe((data)=>{
+this.cartItem = data;
+});
+
+
+ngOnInit(): void {
+  this.cartItemFunc();
+}
+
+cartItem:number = 0;
+cartItemFunc(){
+if(localStorage.getItem('localCart') != null){
+var cartCount = JSON.parse(localStorage.getItem('localCart'));
+this.cartItem = cartCount.length;
+}
+}
+cart.component.html
+<sectionclass="cart_section">
+   <divclass="container">
+       <h2>Cart</h2>
+       <div*ngIf="getCartDetails">
+           <table>
+               <tr>
+                   <th>Image</th>
+                   <th>Price</th>
+                   <th>Quantity</th>
+                   <th>Sub Total</th>
+                   <th>Remove Item</th>
+               </tr>
+               <tr*ngFor="letgetCartDetailofgetCartDetails">
+                   <td><imgsrc="{{getCartDetail.img}}"alt="P1"></td>
+                   <td>₹
+                       {{getCartDetail.amt}}</td>
+                   <td>
+                       <divclass="content">
+                           <buttontype="button"class="btn"(click)="incQnt(getCartDetail.prodId,getCartDetail.qnt)">
+                               <iclass="fa fa-plus"></i>
+                           </button>
+                           <span>{{getCartDetail.qnt}}</span>
+                           <buttontype="button"class="btn"(click)="decQnt(getCartDetail.prodId,getCartDetail.qnt)">
+                               <iclass="fa fa-minus"></i>
+                           </button>
+                       </div>
+                   </td>
+                   <td>
+                        ₹{{getCartDetail.qnt*getCartDetail.amt|number}}
+                   </td>
+                   <td><buttontype="button"class="delete"(click)="singleDelete(getCartDetail.prodId)">
+                           <iclass="fa fa-trash"></i>
+                       </button></td>
+               </tr>
+           </table>
+           <divclass="row">
+               <divclass="col-md-6">
+                   <h3>Total - ₹{{total}}
+
+                   </h3>
+               </div>
+               <divclass="col-md-6 text-right">
+                   <buttontype="button"class="removeall"(click)="removeall()">
+                       <iclass="fa fa-trash"></i>
+                        Remove All Item</button>
+               </div>
+           </div>
+       </div>
+   </div>
+</section>
+cart.component.css
+.cart_section{
+       padding:40px 0;
+   }
+
+   table{
+       font-family:arial,
+            sans-serif;
+       border-collapse:collapse;
+       width:100%;
+   }
+
+   td,
+   th{
+       border:1px solid#dddddd;
+       text-align:left;
+       padding:8px;
+   }
+
+   tr:nth-child(even){
+       background-color:
+           #dddddd;
+   }
+
+   .btn{
+       background:
+           rgb(94,0,0);
+       border-radius:50%;
+       font-size:16px;
+       color:#fff;
+       margin:0 8px;
+   }
+
+   .contentspan{
+       font-weight:800;
+       font-size:18px;
+   }
+
+   .cart_sectionh3{
+       margin-top:10px;
+       font-size:22px;
+   }
+
+   .delete{
+       border:1px solidrgb(247,14,14);
+       cursor:pointer;
+   }
+
+   .deletei{
+       font-size:18px;
+       color:rgb(248,2,2);
+   }
+
+   .removeall{
+       background:#df0000;
+       color:#fff;
+       font-weight:600;
+       border:1px solid#b00000;
+       padding:4px 10px;
+       border-radius:4px;
+       margin-top:14px;
+   }
+cart.component.ts
+import { AuthService } from '../_service/auth.service';
+
+constructor(private auth: AuthService) { }
+
+  ngOnInit(): void {
+    this.CartDetails();
+    this.loadCart();
+  }
+  
+getCartDetails:any=[];
+  CartDetails(){
+if(localStorage.getItem('localCart')){
+this.getCartDetails = JSON.parse(localStorage.getItem('localCart'));
+  }
+}
+
+incQnt(prodId, qnt){
+for(let i=0; i<this.getCartDetails.length;i++){
+if(this.getCartDetails[i].prodId  === prodId){
+if(qnt != 5)
+this.getCartDetails[i].qnt = parseInt(qnt) + 1;
+}
+}
+localStorage.setItem('localCart', JSON.stringify(this.getCartDetails));
+this.loadCart();
+}
+
+decQnt(prodId, qnt){
+for(let i=0; i<this.getCartDetails.length; i++){
+if(this.getCartDetails[i].prodId === prodId){
+if(qnt != 1)
+this.getCartDetails[i].qnt = parseInt(qnt) - 1;
+}
+}
+localStorage.setItem
+('localCart', 
+JSON.stringify
+(this.getCartDetails));
+this.loadCart();
+}
+
+total:number = 0;
+loadCart(){
+if
+(localStorage.getItem
+  ('localCart')){
+this.getCartDetails = 
+JSON.parse
+(localStorage.getItem
+  ('localCart'));
+this.total = 
+this.getCartDetails.reduce
+(function(acc, val){
+return acc + (val.amt * val.qnt);
+}, 0);
+}
+}
+
+removeall(){
+localStorage.removeItem
+('localCart');
+this.getCartDetails = [];
+this.total = 0;
+this.cartNumber = 0;
+this.auth.cartSubject.next
+(this.cartNumber);
+}
+
+singleDelete(getCartDetail){
+console.log(getCartDetail);
+if(localStorage.getItem
+  ('localCart')){
+this.getCartDetails = 
+JSON.parse
+(localStorage.getItem
+  ('localCart'));
+for(let i=0; 
+i<this.getCartDetails.length; 
+i++){
+if
+(this.getCartDetails[i].prodId
+   === getCartDetail){
+this.getCartDetails.splice
+(i, 1);
+localStorage.setItem
+('localCart', 
+JSON.stringify
+(this.getCartDetails));
+this.loadCart();
+this.cartNumberFunc();
+}
+}
+}
+}
+
+cartNumber:number = 0;
+cartNumberFunc(){
+var cartValue = 
+JSON.parse
+(localStorage.getItem
+  ('localCart'));
+this.cartNumber = 
+cartValue.length;
+this.auth.cartSubject.next
+(this.cartNumber);
+}

@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" type="image/x-icon" href="D:\\project\\restaurant.png">
+<style>
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ff8000;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color:  #00BCE3;
+}
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #ff8000;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color:black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 15px;}
+}
+</style>
+</head>
+<body>
+<div style="width: 100%;">
+   <div style="float:left; width: 80%">
+   </div>
+   <div style="float:right;">
+   </div>
+</div>
+<div style="clear:both"></div>
+<ul>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="file:///D:/project/breakfast.html" target="_blank">Breakfast</a>
+  <a href="file:///D:/project/lunch.html" target="_blank">Lunch</a>
+  <a href="file:///D:/project/dinner.html" target="_blank">Dinner</a>
+  <a href="file:///D:/project/juice.html" target="_blank">Juices and Icecreams</a>
+  <a href="file:///D:/project/sweets%20and%20snacks.html" target="_blank">Sweets and Snacks</a>
+</div>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#menu"><span  onclick="openNav()">Menu</span></a></li>
+  <li><a href="file:///D:/project/signup.html">Sign up</a></li>
+  <li><a href="D:\\project\\login.html">Login</a></li>
+  <li style="float:right"><a href="file:///D:/project/About.html">About</a></li>
+  <li style="float:right"><a href="#contact">Contact</a></li>
+</ul>
+<div style="padding:5% 0% 0% 0%; float:center;text-align:center">
+<img src="D:\\project\\dinner.png" height="5%" width="5%"alt="THE DINER">
+  <h1>THE DINER</h1>
+  <h3>Move your feet,get a treat.</h3>
+</div>
+<div class="slideshow-container">
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="D:\\project\\images\\Food quote1.jpg"style="width:100%">
+  <div class="text" style="color:black; font-weight:bold; font-size:40px;">Check out our signatures dishes here!!</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">1 / 8</div>
+  <img src="D:\\project\\images\\foodimg (5).jpg" style="width:90%">
+  <div class="text" style="color:white; font-weight:bold;">Naan</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 8</div>
+  <img src="D:\\project\\images\\foodimg (1).jpg" style="width:100%">
+  <div class="text" style="color:black; font-weight:bold;">Non-Veg Meals</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 8</div>
+  <img src="D:\\project\\images\\foodimg (4).jpg" style="width:100%">
+  <div class="text" style="color:black; font-weight:bold;">Chicken gravey with chicken tandoori</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">4 / 8</div>
+  <img src="D:\\project\\images\\foodimg (2).jpg" style="width:100%">
+  <div class="text" style="color:white; font-weight:bold;font-size:20px;">Veg Meals</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">5 / 8</div>
+  <img src="D:\\project\\images\\foodimg (3).jpg" style="width:100%">
+  <div class="text" style="color:white; font-weight:bold;">Veg Briyani with panner tikka masala</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">6 / 8</div>
+  <img src="D:\\project\\images\\foodimg (8).jpg" style="width:100%">
+  <div class="text" style="color:white; font-weight:bold;">Chicken Tikka</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">7 / 8</div>
+  <img src="D:\\project\\images\\foodimg (11).jpg" style="width:100%">
+  <div class="text" style="color:black; font-weight:bold;">Hyderbad Briyani</div>
+</div>
+<div class="mySlides fade">
+  <div class="numbertext">8 / 8</div>
+  <img src="D:\\project\\images\\foodimg (10).jpg" style="width:100%">
+  <div class="text" style="color:white; font-weight:bold;">Breakfast Combo</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+<div>
+<table style="text-align:center;">
+<tr>
+<th>Days</th>
+<th>Duration</th>
+</tr>
+<tr>
+<td>Monday</td>
+<td>7.30am-10.30pm</td>
+</tr>
+<tr>
+<td>Tuesday</td>
+<td>7.30am-10.30pm</td>
+</tr>
+<tr>
+<td>Wednesday</td>
+<td>7.30am-10.30pm</td>
+</tr>
+<tr>
+<td>Thusrday</td>
+<td>7.30am-10.30pm</td>
+</tr>
+<tr>
+<td>Friday</td>
+<td>7.30am-10.30pm</td>
+</tr>
+<tr>
+<td>Saturday</td>
+<td>7.30am-10.30pm</td>
+</tr><tr>
+<td>Sunday</td>
+<td>7.30am-10.30pm</td>
+</tr>
+</table>
+</div>
+</div>
+<div>
+<div class="about-section" style="font-weight:bold;text-align:center;text-align:justify;">
+<img src="D:\\project\\dinner2.jpg" alt="Restaurant Img" height="500px" width="500px">
+  <h1>About Us</h1>
+  <p>Over the years,The Diner restaurant have earned a reputation for culinary excellence 
+  thanks to their authentic delicacies and signature dining experiences. 
+  From traditional flavours influenced by local culture to gastronomic 
+  delights that trot the world,we have always raised the standard of hospitality at afforable prices. 
+  The aim of our restaurant is to turn every meal into a special event, where thoughtfulness,
+  attention to detail, time-honoured techniques and innovative thinking come together to speak the language of food.</p>
+  
+  <h1>Our Michelin Star Chef<h1>
+  <img src="D:\\project\\Garima-Arora--866x1298.webp" alt="Chef" style="width:200px;border-radius: 50%">
+  <h3 style="float:center;">Garima Arora</h3>
+  <p>The Diner,a modern indian fine dining Restaurant by Garima Arora.she became 
+  the first Indian woman to win a Michelin star award in November 2018.
+  Her vision to SERVE BETTER is our formula for sucess.Her efforts,sincerity,
+  intention noble and the aspiration was high to gain success as natural by-product. 
+  Delicious food prepared under extremely hygienic conditions, served in 
+  a clean environment with a lot of passion and the reasonable pricing is 
+  the perfect answer to our gourmet and budget conscious customer.
+</div>
+</div>
+<div style="background-color:#ff8000;text-align:center;font-weight:bold;font-size:20px;">
+<pre>
+©2023 The DINER |Madurai
+Developed by Swetha.k and Pradeepa.J
+</pre>
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "260px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html> 

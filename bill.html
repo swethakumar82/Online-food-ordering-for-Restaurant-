@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Restaurant Invoice</title>
+   <style>
+   
+      .container {
+         position: fixed;
+         top: 20%;
+         left: 28%;
+         border-radius: 20px;
+      }
+      .card {
+         box-sizing: content-box;
+         width: 300px;
+         height: 400px;
+         padding: 30px;
+         border: 1px solid black;
+         font-style: sans-serif;
+         background-color: #f0f0f0;
+      }
+      h2 {
+         text-align: center;
+         color: #24650b;
+      }
+	  
+	  table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		th, td {
+			padding: 5px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+
+		.invoice-header {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 20px;
+		}
+
+		.invoice-header > div {
+			flex-basis: 50%;
+		}
+
+		.invoice-header h1 {
+			margin: 0;
+			font-size: 32px;
+			font-weight: normal;
+			color: #333;
+		}
+
+		.invoice-header p {
+			margin: 0;
+			font-size: 16px;
+			line-height: 1.5;
+			color: #666;
+		}
+
+		.invoice-details {
+			margin-bottom: 20px;
+		}
+
+		.invoice-details table td:last-child {
+			text-align: right;
+		}
+
+		.invoice-total {
+			margin-top: 40px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.invoice-total h2 {
+			margin: 0;
+			font-size: 28px;
+			font-weight: normal;
+			color: #333;
+		}
+
+		.invoice-total span {
+			font-size: 24px;
+			color: #333;
+		}
+   </style>
+</head>
+<body>
+<div class="container">
+      <button id="pdfButton"><b>Print PDF</b></button>
+      <div class="card" id="generatePDF">
+	<div class="invoice-header">
+		<div>
+		<img src="D:\\project\\dinner.png" height="15%" width="15%"alt="THE DINER"><h1>THE DINER</h1>
+         <h6>Move your feet,get a treat.</h6>
+			<p>123 Main St,Madurai,TamilNadu<br>
+			Phone: 1234567890<br>
+			Email: thediner@gmail.com</p>
+		</div>
+		<div>
+			<p>Invoice #: 12345<br>
+			Date: 2023-04-27<br>
+		</div>
+	</div>
+	<div class="invoice-details">
+		<table>
+			<thead>
+				<tr>
+					<th>Item</th>
+					<th>Quantity</th>
+					<th>Price</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Spaghetti</td>
+					<td>2</td>
+					<td>$10.00</td>
+					<td>$20.00</td>
+				</tr>
+				<tr>
+					<td>Caesar Salad</td>
+					<td>1</td>
+					<td>$8.00</td>
+					<td>$8.00</td>
+				</tr>
+				<tr>
+					<td>Garlic Bread</td>
+					<td>3</td>
+					<td>$5.00</td>
+					<td>$15.00</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="invoice-total">
+		<div>
+			<p>Thank you visit again!</p>
+		</div>
+		<div>
+			<h2>Total:</h2>
+			<span>$43.00</span>
+		</div>
+	</div>
+</body>
+
+      </div>
+   </div>
+   <script>
+      var button = document.getElementById("pdfButton");
+      var makepdf = document.getElementById("generatePDF");
+      button.addEventListener("click", function () {
+         var mywindow = window.open("", "PRINT", "height=600,width=600");
+         mywindow.document.write(makepdf.innerHTML);
+         mywindow.document.close();
+         mywindow.focus();
+         mywindow.print();
+         return true;
+      });
+   </script>
+</body>
+</html>
